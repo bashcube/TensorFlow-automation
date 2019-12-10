@@ -1,0 +1,20 @@
+---
+- name: Installling tensorflow
+  hosts: localhost
+  become: true
+  become_user: root
+
+  tasks:
+    - name: Installing python
+      dnf: 
+       name: python37
+       state: installed
+
+    - name: Installing pip
+      yum:
+       name: python-pip
+       state: installed
+
+    - name: installing tensorflow
+      pip:
+       name: tensorflow  
